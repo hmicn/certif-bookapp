@@ -4,7 +4,7 @@ pipeline {
     environment {
         GIT_REPO = "https://github.com/hmicn/certif-bookapp.git"
         GIT_BRANCH = "main"
-        DEPLOY_DIR = "web032"
+        DEPLOY_DIR = "web022"
     }
 
     stages {
