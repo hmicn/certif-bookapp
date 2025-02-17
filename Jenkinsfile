@@ -59,7 +59,7 @@ pipeline {
             steps {
                 sh "rm -rf /var/www/html/${DEPLOY_DIR}/*" // Nettoyage du dossier de destination
                 sh "cp -rT ${DEPLOY_DIR} /var/www/html/${DEPLOY_DIR}"
-                sh "chmod -R 777 /var/www/html/${DEPLOY_DIR}/var"
+                sh "chmod -R 775 /var/www/html/${DEPLOY_DIR}/var"
             }
         }
     }
