@@ -58,7 +58,7 @@ pipeline {
         stage('Déploiement') {
             steps {
                 sh "rm -rf /var/www/html/${DEPLOY_DIR}/*" // Nettoyage du dossier de destination
-                sh "cp -R ${DEPLOY_DIR}/* /var/www/html/${DEPLOY_DIR}/"
+                sh "cp -rT ${DEPLOY_DIR} /var/www/html/${DEPLOY_DIR}"
             }
         }
     }
