@@ -59,8 +59,8 @@ pipeline {
             steps {
                 sh "rm -rf /var/www/html/${DEPLOY_DIR}/*" // Nettoyage du dossier de destination
                 sh "cp -rT ${DEPLOY_DIR} /var/www/html/${DEPLOY_DIR}"
-                sh "chown -R www-data:www-data /var/www/html/${DEPLOY_DIR}/" // Ajuster les permissions
-                sh "chmod -R 755 /var/www/html/${DEPLOY_DIR}/"
+                sh "chmod -R 755 /var/www/html/${DEPLOY_DIR}/var"
+                sh "chown -R www-data:www-data /var/www/html/${DEPLOY_DIR}/var" // Ajuster les permissions
             }
         }
     }
