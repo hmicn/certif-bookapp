@@ -58,7 +58,7 @@ pipeline {
         stage('Déploiement') {
             steps {
                 sh "rm -rf /var/www/html/${DEPLOY_DIR}/*" // Nettoyage du dossier de destination
-                sh "rm -rf /var/www/html/${DEPLOY_DIR}/.*"
+                sh "rm -rf /var/www/html/${DEPLOY_DIR}/.*" // Nettoyage des fichiers commencant par "." (.env etc.)
                 sh "cp -rT ${DEPLOY_DIR} /var/www/html/${DEPLOY_DIR}"
                 sh "chmod -R 775 /var/www/html/${DEPLOY_DIR}/var"
             }
